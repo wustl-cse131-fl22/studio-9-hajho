@@ -19,9 +19,15 @@ public class NameToHeight {
 	 */
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
-
+		Map<String,Integer> NameToHeight = new HashMap<>();
+		
+		NameToHeight.put("Eric Ha", 179);
+		NameToHeight.put("Sungwoo Jho", 174);
+		
+		for(String name : NameToHeight.keySet()) {
+			System.out.println(name + ": " + NameToHeight.get(name));
+		}
 		// FIXME
-		throw new NotYetImplementedException();
 
 	}
 }

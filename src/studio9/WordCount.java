@@ -4,8 +4,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import support.cse131.NotYetImplementedException;
-
 public class WordCount {
 	/**
 	 * Constructs and returns a map of the distinct words in the specified list with
@@ -28,9 +26,18 @@ public class WordCount {
 	 *         associated with the number of occurrences of the word
 	 */
 	public static Map<String, Integer> countWords(List<String> words) {
-
+		Map<String, Integer> countWords = new HashMap<>();
+		for (String newWord: words) {
+			if (!countWords.containsKey(newWord)) {
+				countWords.put(newWord, 1);
+			}
+			else {
+				int count = countWords.get(newWord);
+				countWords.put(newWord, count + 1);
+			}
+		}
+		return countWords;
 		// FIXME
-		throw new NotYetImplementedException();
 
 	}
 }
